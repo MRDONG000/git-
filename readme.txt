@@ -43,4 +43,4 @@ git add -A 或 -U
 git restore 不小心删除的文件
 
 方法二：
-git checkout -- 文件名     撤销放弃修改
+git checkout -- 文件名     撤销放弃修改指令
