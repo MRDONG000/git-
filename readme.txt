@@ -135,6 +135,9 @@ git push -u origin main（本地仓库的分支名，一般本地仓库的分支
 所以可以使用
 git push -u origin main:master 命令将本地项目发送到远程仓库origin分支下的main分支中
 
+如何在github上下载别人的项目
+可以git clone + Code里面的SSH或者HTTP命令，就可以了
+例如:git clone git@github.com:MRDONG000/git-.git
 
 
 
