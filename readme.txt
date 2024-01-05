@@ -59,6 +59,31 @@ git reset 命令既可以回退版本，也可以把暂存区修改回退到工�
 git log 指令可以查看用户在当前仓库中所有commit提交日志
 git log --pretty=oneline 参数可以让log日志一行输出
 
+但是git log有一个缺点，当我们回退到之前的版本时输入git log只能看到当前和之前的版本，后面更新的就没办法看到了，
+针对这个情况我们可以使用git reflog 就可以看到所有操作了
+
 回退
 使用reset 版本回退
 使用版本回退时Git必须知道回退到那个版本，其中HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上一个版本以此类推
+如果要回退的版本较早，使用HEAD~数字的形式来进行回退
+
+git reset --hard HEAD~2
+git 可以通过指定版本号，回退到指定版本
+版本号就是log日志中使用SHA1计算出类似于"1d9jsdv"的字符串
+使用指定版本号回退版本时无需使用完整版本号，写前几位能跟其他版本号区分开就可以
+git reset --hard 版本号（例如：537e0c10ef63eb47e4723fd8dd1839969a6ee129，一般取前六位就可以）
+
+创建分支
+git checkout -b dev   创建一个名字为dev的分支，-b表示创建并切换分支，相当于下面两条命令
+1.git branch dev
+2.git checkout dev
+
+git 新版本使用switch进行分支切换
+git switch dev 切换分支
+git switch -c dev 创建并切换分支
+
+git branch命令可以查看当前分支
+
+
+
+
