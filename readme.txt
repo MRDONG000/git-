@@ -84,6 +84,12 @@ git switch -c dev 创建并切换分支
 
 git branch命令可以查看当前分支
 
+如何合并分支
+使用merge把dev分支的工作成果合并到master分支上
+git merge dev
+git merge命令用于合并指定分支到当前分支。合并后，再查看reademe.txt的内容，就可以看到，和dev分支的最新提交是完全一样的
+合并完成后甚至可以删除dev分支，删除dev分支就是把dev指针给删除掉，删掉后，我们就只剩下了一条master分支
+
 
 
 
