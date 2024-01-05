@@ -107,6 +107,33 @@ git branch -d dev(分支名)
 3.团队开发中我们每个人都在dev分支上干活，每个人都有自己的分支，时不时的往dev分支上合并就可以了
 
 
+使用GitHub
+注册账户以及创建仓库
+1.配置：首先要在本地配置一个密钥，只有通过密钥才可以在github的仓库中去修改，别人只能查看和下载
+打开cmd命令面板，里面输入命令 ssh-keygen -t rsa -C "邮箱"，例如ssh-keygen -t rsa -C "783508268@qq.com"
+
+成功后可以在用户主目录里找到ssh目录，里面有id_rsa和id_rsa.pub两个文件，id_rsa是SSH Key的私钥，不能泄露出去，id_rsa.pub是SSH Key的公钥
+可以放心告诉任何人
+
+如何在github上配置？
+步骤
+1.点击头像，点击设置，选择SSH and GPG keys
+2.点击SSH keys 去newSSH key，其中title可以随便写，代表访问仓库的电脑机器，接着在Key中把id_rsa.pub中的代码粘贴过去然后保存就好了
+
+配置好后创建仓库，就可以使用了
+首先配置好了SSH协议后，就可以直接使用我们的电脑通过SSH协议访问github上的仓库
+通过git面板，
+1.通过SSH协议访问github仓库
+输入：git remote add origin git@github.com:MRDONG000/git-.git
+意译为：将远程仓库的分支origin和本地仓库进行一个匹配
+2.通过HTTP协议访问github仓库
+输入：git remote add origin https://github.com/MRDONG000/git-.git
+
+接着如何把项目上传到github远程仓库上，可以使用git push -u origin（远程仓库分支） master(本地仓库分支)命令
+git push -u origin main（本地仓库的分支名，一般本地仓库的分支名叫master）
+意义：将当前分支仓库的项目发送到远程仓库分支origin中，一般远程仓库origin开发的主分支是main
+所以可以使用
+git push -u origin main:master 命令将本地项目发送到远程仓库origin分支下的main分支中
 
 
 
